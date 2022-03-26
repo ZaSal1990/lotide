@@ -1,5 +1,4 @@
-
-
+//prgm to assert/compare items in one array to their counter parts in teh otehr array
 
 const assertArraysEqual = function(arrayOne, arrayTwo) {
   if (arrayOne.length === arrayTwo.length) {

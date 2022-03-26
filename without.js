@@ -1,3 +1,5 @@
+//program to elimate one array items from teh second
+
 const without = function(sourceArray,itemsToRemove) {
   let newArray = [];
   for (let loopOne = 0; loopOne < sourceArray.length; loopOne++) {

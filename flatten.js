@@ -1,3 +1,5 @@
+//prgm to flatten arrays
+
 const flatten = function(sourceArray) {
   let targetArray = [];
   for (let item of sourceArray) {
@@ -27,20 +29,6 @@ const assertArraysEqual = function(arrayOne, arrayTwo) {
   }
 };
 
-
-const eqArrays = function(arrayOne, arrayTwo) {
-  if (arrayOne.length === arrayTwo.length) {
-    for (let loopOne = 0; loopOne < arrayOne.length; loopOne++) {
-      for (let loopTwo = 0; loopTwo < arrayTwo.length; loopTwo++) {
-        if (arrayOne[loopOne] === arrayTwo[loopTwo]) {
-          return true;
-        } else if (arrayOne[loopOne] !== arrayTwo[loopTwo]) {
-          return false;
-        }
-      }
-    }
-  }
-};
 
 
 console.log(assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]),[1, 2, 3, 4, 5, 6])); // => [1, 2, 3, 4, 5, 6]

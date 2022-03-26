@@ -1,5 +1,5 @@
 
-
+//prgm to comapre one array items to the counter parts 
 
 const eqArrays = function(arrayOne, arrayTwo) {
   if (arrayOne.length === arrayTwo.length) {
