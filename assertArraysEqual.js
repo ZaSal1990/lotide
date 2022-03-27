@@ -1,19 +1,30 @@
 //prgm to assert/compare items in one array to their counter parts in teh otehr array
 
+
 const assertArraysEqual = function(arrayOne, arrayTwo) {
   if (arrayOne.length === arrayTwo.length) {
-    for (let loopOne = 0; loopOne < arrayOne.length; loopOne++) {
-      for (let loopTwo = 0; loopTwo < arrayTwo.length; loopTwo++) {
-        if (arrayOne[loopOne] === arrayTwo[loopTwo]) {
-          return `Assertion Passed: ${arrayOne} === ${arrayTwo}`;
-        } else if (arrayOne[loopOne] !== arrayTwo[loopTwo]) {
-          return `Assertion Failed: ${arrayOne} !== ${arrayTwo}`;
-        }
-      }
+    if (eqArrays(arrayOne,arrayTwo) === true) {
+      console.log('Assertion Passed');
+    } else if (eqArrays(arrayOne,arrayTwo) === false) {
+      console.log('Assertion Failed');
     }
   }
 };
 
 
-
-console.log(assertArraysEqual([1, 2, 3], [1, 2, 3]));
+const eqArrays = function(arrayOne, arrayTwo) {
+  let result;
+  if (arrayOne.length === arrayTwo.length) {
+    for (let index = 0; index < arrayOne.length; index++) {
+      if (arrayOne[index] !== arrayTwo[index])  {
+        result = false;
+        break;
+      } else if (arrayOne[index] === arrayTwo[index])
+        result = true;
+    }
+  }
+  return result;
+};
+  
+assertArraysEqual([1, 2, 3], [1, 1, 3]);
+assertArraysEqual([1, 2, 3], [1, 2, 3]);

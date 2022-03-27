@@ -14,18 +14,28 @@ const without = function(sourceArray,itemsToRemove) {
 
 const assertArraysEqual = function(arrayOne, arrayTwo) {
   if (arrayOne.length === arrayTwo.length) {
-    for (let loopOne = 0; loopOne < arrayOne.length; loopOne++) {
-      for (let loopTwo = 0; loopTwo < arrayTwo.length; loopTwo++) {
-        if (arrayOne[loopOne] === arrayTwo[loopTwo]) {
-          return `Assertion Passed: ${arrayOne} === ${arrayTwo}`;
-        } else if (arrayOne[loopOne] !== arrayTwo[loopTwo]) {
-          return `Assertion Failed: ${arrayOne} !== ${arrayTwo}`;
-        }
-      }
+    if (eqArrays(arrayOne,arrayTwo) === true) {
+      console.log('Assertion Passed');
+    } else if (eqArrays(arrayOne,arrayTwo) === false) {
+      console.log('Assertion Failed');
     }
   }
 };
+
+const eqArrays = function(arrayOne, arrayTwo) {
+  let result;
+  if (arrayOne.length === arrayTwo.length) {
+    for (let index = 0; index < arrayOne.length; index++) {
+      if (arrayOne[index] !== arrayTwo[index])  {
+        result = false;
+        break;
+      } else if (arrayOne[index] === arrayTwo[index])
+        result = true;
+    }
+  }
+  return result;
+};
 const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]); // no need to capture return value for this test case
+//without(words, ["lighthouse"]); // no need to capture return value for this test case
 // Make sure the original array was not altered by the without function
-console.log(assertArraysEqual(words, ["hello", "world", "lighthouse"]));
+assertArraysEqual(words, ["hello", "world", "lighthouse"]);

@@ -15,20 +15,32 @@ const flatten = function(sourceArray) {
 };
 
 
+
 const assertArraysEqual = function(arrayOne, arrayTwo) {
   if (arrayOne.length === arrayTwo.length) {
-    for (let loopOne = 0; loopOne < arrayOne.length; loopOne++) {
-      for (let loopTwo = 0; loopTwo < arrayTwo.length; loopTwo++) {
-        if (arrayOne[loopOne] === arrayTwo[loopTwo]) {
-          return `Assertion Passed: ${arrayOne} === ${arrayTwo}`;
-        } else if (arrayOne[loopOne] !== arrayTwo[loopTwo]) {
-          return `Assertion Failed: ${arrayOne} !== ${arrayTwo}`;
-        }
-      }
+    if (eqArrays(arrayOne,arrayTwo) === true) {
+      console.log('Assertion Passed');
+    } else if (eqArrays(arrayOne,arrayTwo) === false) {
+      console.log('Assertion Failed');
     }
   }
 };
 
 
+const eqArrays = function(arrayOne, arrayTwo) {
+  let result;
+  if (arrayOne.length === arrayTwo.length) {
+    for (let index = 0; index < arrayOne.length; index++) {
+      if (arrayOne[index] !== arrayTwo[index])  {
+        result = false;
+        break;
+      } else if (arrayOne[index] === arrayTwo[index])
+        result = true;
+    }
+  }
+  return result;
+};
 
-console.log(assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]),[1, 2, 3, 4, 5, 6])); // => [1, 2, 3, 4, 5, 6]
+
+
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]),[1, 2, 3, 4, 5, 6]); // => [1, 2, 3, 4, 5, 6]
