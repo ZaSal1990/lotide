@@ -7,18 +7,22 @@ const assertEqual = function(actual, expected) {
 // allItems: an array of strings that we need to look through
 // itemsToCount: an object specifying what to count
 const countOnly = function(allItems, itemsToCount) {
-  
-  let countedNames = allItems.reduce(function(allNames, name) {
+  let countedNames = {};
+  for (let items of allItems) { //Array needs for...of
+    countedNames[items] = (countedNames[items] || 0) + 1;
+} // assigning items as key in result object LHS, ORing with 0 to see if the item is unique in the array, if not, +1 to the existing value
+
+  /*let countedNames = allItems.reduce(function(allNames, name) { // counting using reduce
     if (name in allNames) {
       allNames[name]++;
     } else {
       allNames[name] = 1;
     }
     return allNames;
-  }, {});
+  }, {});*/
   
 
-  let newObject = itemsToCount;
+  let newObject = itemsToCount; // copying item to another object to ensure originals tays intact
   for (const item in newObject) {
     if (newObject[item] === false) { //value of key(name)
       delete newObject[item];
@@ -26,10 +30,8 @@ const countOnly = function(allItems, itemsToCount) {
       newObject[item] = countedNames[item]; //replacing the value with the value of same key in countedNames object
     }
   }
-  return newObject;
+  return newObject;};
   
-};
-
 const firstNames = [
   "Karl",
   "Salima",
@@ -42,7 +44,7 @@ const firstNames = [
   "Joe"
 ];
 
-
+//console.log(countOnly(firstNames));
 const result1 = countOnly(firstNames, { "Jason": true, "Karima": true, "Fang": true, "Agouhanna": false });
 console.log(result1);
 assertEqual(result1["Jason"], 1);
