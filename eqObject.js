@@ -14,6 +14,8 @@ const eqArrays = function(arrayOne, arrayTwo) { //modified to adapt to this prog
         result = true;
     }
   }
+  else if (arrayOne.length !== arrayTwo.length)
+  { result = false; }
   return result;
 };
 
@@ -66,10 +68,15 @@ const eqObjects = function(object1, object2) {
 
 const ab = { a: "1", b: ["4"]};
 const ba = { b: ["4"], a: "1" };
-console.log(eqObjects(ab, ba)); // => true
-
-
+assertEqual(eqObjects(ab, ba),true); // => true
 
 
 const abc = { a: "1", b: "2", c: "3" };
-console.log(eqObjects(ab, abc)); // => false
+assertEqual(eqObjects(ab, abc),false); // => false
+
+const cd = { c: "1", d: ["2", 3] };
+const dc = { d: ["2", 3], c: "1" };
+assertEqual(eqObjects(cd, dc),true); // => true
+
+const cd2 = { c: "1", d: ["2", 3, 4] };
+assertEqual(eqObjects(cd, cd2),false); // => false
