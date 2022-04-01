@@ -1,34 +1,15 @@
 const letterPositions = function(sentence) {
-  const results = {};
-  
-
-  for (let index = 0; index < sentence.length; index++) {
-    results[sentence[index]] = (results[sentence[index]] || 0) + 1;
-    for (indexTwo = 0; indexTwo < results[sentence[index]]; results[sentence[index]]++)
-    {
-      if (typeof results[sentence[index]] === 'number')
-      {
-        let newArray = [];
-        results[sentence[index]] = newArray.push(indexTwo);
-      }
-      else if (typeof results[sentence[index]] === 'object')
-      {
-        results[sentence[index]] = newArray.push(indexTwo);
-      }
-    }
-
-    //results[sentence[index]] = results[sentence[index]] > 1 ? createDataSet(index, Object.values(results[sentence[index]])) : index;
-    
-   
-    
+  let result = {};
+  for (let char = 0; char < sentence.length; char++) {
+    if (result[sentence.charAt(char)]) { // e.g. if 'h' exixts in result for char = 0
+      result[sentence.charAt(char)].push(char); // push to existing array
+    } else {
+      result[sentence.charAt(char)] = [char]; //if no value to key 'h' in result, assign it index inside an array
+    } // if part of teh loop will check if array exists, then push to it
   }
- 
-  return results;
-  
+  return result;
 };
 
-const createDataSet = function(index, value) {
-return value;
-};
+
 
 console.log(letterPositions("hello"));
