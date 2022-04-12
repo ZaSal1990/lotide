@@ -1,5 +1,8 @@
 // prgm to log only the middle item of the array
 
+
+
+
 const middle = function(sourceArray) {
   let newArray = [];
   let indexMiddleItemEven = sourceArray.length / 2;
@@ -13,23 +16,25 @@ const middle = function(sourceArray) {
   return newArray;
 };
   
-const assertArraysEqual = function(arrayOne, arrayTwo) {
-  if (arrayOne.length === arrayTwo.length) {
-    for (let loopOne = 0; loopOne < arrayOne.length; loopOne++) {
-      for (let loopTwo = 0; loopTwo < arrayTwo.length; loopTwo++) {
-        if (arrayOne[loopOne] === arrayTwo[loopTwo]) {
-          return `Assertion Passed: ${arrayOne} === ${arrayTwo}`;
-        } else if (arrayOne[loopOne] !== arrayTwo[loopTwo]) {
-          return `Assertion Failed: ${arrayOne} !== ${arrayTwo}`;
-        }
-      }
-    }
-   }
-};
+// const assertArraysEqual = function(arrayOne, arrayTwo) {
+//   if (arrayOne.length === arrayTwo.length) {
+//     for (let loopOne = 0; loopOne < arrayOne.length; loopOne++) {
+//       for (let loopTwo = 0; loopTwo < arrayTwo.length; loopTwo++) {
+//         if (arrayOne[loopOne] === arrayTwo[loopTwo]) {
+//           return `Assertion Passed: ${arrayOne} === ${arrayTwo}`;
+//         } else if (arrayOne[loopOne] !== arrayTwo[loopTwo]) {
+//           return `Assertion Failed: ${arrayOne} !== ${arrayTwo}`;
+//         }
+//       }
+//     }
+//    }
+// };
 
-console.log(middle([1]));
+//console.log(middle([1]));
 //console.log(assertArraysEqual(middle([1]),[]));
-console.log(assertArraysEqual(middle([1, 2, 3, 4]),[2,3])); // => [2, 3]
-console.log(assertArraysEqual(middle([1, 2, 3, 4, 5, 6]),[3, 4]));
-console.log(assertArraysEqual(middle([1, 2, 3]),[2]));
-console.log(assertArraysEqual(middle([1, 2, 3, 4, 5]),[3]));
+// console.log(assertArraysEqual(middle([1, 2, 3, 4]),[2,3])); // => [2, 3]
+// console.log(assertArraysEqual(middle([1, 2, 3, 4, 5, 6]),[3, 4]));
+// console.log(assertArraysEqual(middle([1, 2, 3]),[2]));
+// console.log(assertArraysEqual(middle([1, 2, 3, 4, 5]),[3]));
+
+module.exports = middle;
