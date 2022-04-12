@@ -14,8 +14,11 @@ const assertEqual = function(actual, expected) {
   else console.log(`Assertion Failed: ${actual} !== ${expected}`);
 };
 
-// TEST CODE
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1,1);
+// // TEST CODE
+// assertEqual("Lighthouse Labs", "Bootcamp");
+// assertEqual(1,1);
 
 // prgm to log assertion messag eto console
+
+module.exports = assertEqual;
+//console.log(module);
