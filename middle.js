@@ -9,7 +9,7 @@ const middle = function(sourceArray) {
   let indexMiddleItemOdd = Math.ceil((sourceArray.length - 1) / 2);
   //console.log(sourceArray.length);
   if (sourceArray.length > 2 && sourceArray.length % 2 === 0)  {
-    newArray.push(sourceArray[indexMiddleItemEven - 1],sourceArray[indexMiddleItemEven + 1]);
+    newArray.push(sourceArray[indexMiddleItemEven - 1],sourceArray[indexMiddleItemEven]);
   } else if (sourceArray.length > 2 && sourceArray.length % 2 === 1)  {
     newArray.push(sourceArray[indexMiddleItemOdd]);
   }
@@ -30,8 +30,8 @@ const middle = function(sourceArray) {
 //    }
 // };
 
-//console.log(middle([1]));
-//console.log(assertArraysEqual(middle([1]),[]));
+// console.log(middle([1]));
+// console.log(assertArraysEqual(middle([1]),[]));
 // console.log(assertArraysEqual(middle([1, 2, 3, 4]),[2,3])); // => [2, 3]
 // console.log(assertArraysEqual(middle([1, 2, 3, 4, 5, 6]),[3, 4]));
 // console.log(assertArraysEqual(middle([1, 2, 3]),[2]));
