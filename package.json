@@ -1,8 +1,8 @@
 {
-  "name": "lotide",
+  "name": "@zasal1990/lotide",
   "version": "1.0.0",
-  "description": "",
-  "main": "assertArraysEqual.js",
+  "description": "variant of Lodash",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -11,9 +11,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ZaSal1990/lotide.git"
+    "url": "git+https://github.com/ZaSal1990/lotide"
   },
-  "author": "",
+  "author": "Zahra Salman",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ZaSal1990/lotide/issues"
