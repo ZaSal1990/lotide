@@ -1,24 +1,24 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected)
-    console.log(`Assertion Passed: ${actual} === ${expected}`);
-  else console.log(`Assertion Failed: ${actual} !== ${expected}`);
-};
+// const assertEqual = function(actual, expected) {
+//   if (actual === expected)
+//     console.log(`Assertion Passed: ${actual} === ${expected}`);
+//   else console.log(`Assertion Failed: ${actual} !== ${expected}`);
+// };
 
-const eqArrays = function(arrayOne, arrayTwo) { //modified to adapt to this program
-  let result;
-  if (arrayOne.length === arrayTwo.length) {
-    for (let index = 0; index < arrayOne.length; index++) {
-      if (arrayOne[index] !== arrayTwo[index])  {
-        result = false; break;
-      } else if (arrayOne[index] === arrayTwo[index])
-        result = true;
-    }
-  }
-  else if (arrayOne.length !== arrayTwo.length)
-  { result = false; }
-  return result;
-};
-
+// const eqArrays = function(arrayOne, arrayTwo) { //modified to adapt to this program
+//   let result;
+//   if (arrayOne.length === arrayTwo.length) {
+//     for (let index = 0; index < arrayOne.length; index++) {
+//       if (arrayOne[index] !== arrayTwo[index])  {
+//         result = false; break;
+//       } else if (arrayOne[index] === arrayTwo[index])
+//         result = true;
+//     }
+//   }
+//   else if (arrayOne.length !== arrayTwo.length)
+//   { result = false; }
+//   return result;
+// };
+const eqArrays = require('./eqArray');
 // Returns true if both objects have identical keys with identical values.
 // Otherwise you get back a big fat false!
 const eqObjects = function(object1, object2) {
@@ -66,20 +66,20 @@ const eqObjects = function(object1, object2) {
 
 
 
-const ab = { a: "1", b: ["4"]};
-const ba = { b: ["4"], a: "1" };
-assertEqual(eqObjects(ab, ba),true); // => true
+// const ab = { a: "1", b: ["4"]};
+// const ba = { b: ["4"], a: "1" };
+// assertEqual(eqObjects(ab, ba),true); // => true
 
 
-const abc = { a: "1", b: "2", c: "3" };
-assertEqual(eqObjects(ab, abc),false); // => false
+// const abc = { a: "1", b: "2", c: "3" };
+// assertEqual(eqObjects(ab, abc),false); // => false
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-assertEqual(eqObjects(cd, dc),true); // => true
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// assertEqual(eqObjects(cd, dc),true); // => true
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-assertEqual(eqObjects(cd, cd2),false); // => false
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// assertEqual(eqObjects(cd, cd2),false); // => false
 
 
 module.exports = eqObjects;

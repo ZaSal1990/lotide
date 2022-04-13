@@ -30,7 +30,7 @@ const countLetters = function(string) {
 };
 
 
-console.log(countLetters('LHL'));
+//console.log(countLetters('LHL'));
 
 module.exports = countLetters;
 
