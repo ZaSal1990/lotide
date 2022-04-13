@@ -82,13 +82,13 @@ const assertObjectEqual = function(object1, object2) {
 
 
 
-const ab = { a: "1", b: ["4"]};
-const ba = { b: ["4"], a: "1" };
-console.log(assertObjectEqual(ab, ba)); // => true
+// const ab = { a: "1", b: ["4"]};
+// const ba = { b: ["4"], a: "1" };
+// console.log(assertObjectEqual(ab, ba)); // => true
 
 
-const abc = { a: "1", b: "2", c: "3" };
-assertObjectEqual(ab, abc); // => false
+// const abc = { a: "1", b: "2", c: "3" };
+// assertObjectEqual(ab, abc); // => false
 
 // const cd = { c: "1", d: ["2", 3] };
 // const dc = { d: ["2", 3], c: "1" };
