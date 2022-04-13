@@ -32,3 +32,5 @@ const countLetters = function(string) {
 
 console.log(countLetters('LHL'));
 
+module.exports = countLetters;
+

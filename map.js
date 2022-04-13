@@ -37,3 +37,5 @@ assertArraysEqual(map(words,(word) => { return word.toUpperCase(); }), ['GROUND'
 
 
 //console.log(map(words,(word) => { return word.toUpperCase(); }));
+
+module.exports = map;
