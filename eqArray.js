@@ -16,6 +16,6 @@ const eqArrays = function(arrayOne, arrayTwo) {
   } return result;
 };
 
-console.log(eqArrays([1, 2, 3], [1, 2, 3])); 
+
 
 module.exports = eqArrays;
