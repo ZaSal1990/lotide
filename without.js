@@ -1,15 +1,20 @@
 
 
-const without = function(sourceArray,itemsToRemove) {
-  let newArray = [];
-  for (let loopOne = 0; loopOne < sourceArray.length; loopOne++) {
-    for (let loopTwo = 0; loopTwo < itemsToRemove.length; loopTwo++) {
-      if (sourceArray[loopOne] !== itemsToRemove[loopTwo]) {
-        newArray.push(sourceArray[loopOne]);
-      }
+
+const without = function (sourceArray, itemsToRemove) {
+  for (let loopOne = 0; loopOne < itemsToRemove.length; loopOne++) { //2
+    for (let loopTwo = 0; loopTwo < sourceArray.length; loopTwo++) { //3
+      if (sourceArray[loopTwo] === itemsToRemove[loopOne])
+      {
+        sourceArray.splice(loopTwo,1);
+      };
     }
   }
-  return newArray;
+return sourceArray;
 };
+
+
+
+
 
 module.exports = without;
