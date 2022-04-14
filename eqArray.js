@@ -11,8 +11,11 @@ const eqArrays = function(arrayOne, arrayTwo) {
         result = true;
     }
   }
-  return result;
+  else if (arrayOne.length !== arrayTwo.length) {
+    result = false;
+  } return result;
 };
 
+console.log(eqArrays([1, 2, 3], [1, 2, 3])); 
 
 module.exports = eqArrays;
