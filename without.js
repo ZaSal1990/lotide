@@ -15,6 +15,4 @@ return sourceArray;
 
 
 
-
-
 module.exports = without;
