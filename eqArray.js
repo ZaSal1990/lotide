@@ -10,8 +10,7 @@ const eqArrays = function(arrayOne, arrayTwo) {
       } else if (arrayOne[index] === arrayTwo[index])
         result = true;
     }
-  }
-  else if (arrayOne.length !== arrayTwo.length) {
+  } else if (arrayOne.length !== arrayTwo.length) {
     result = false;
   } return result;
 };
