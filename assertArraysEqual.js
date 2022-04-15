@@ -3,9 +3,9 @@ const eqArrays = require('./eqArray');
 const assertArraysEqual = function(arrayOne, arrayTwo) {
   if (arrayOne.length === arrayTwo.length) {
     if (eqArrays(arrayOne,arrayTwo) === true) {
-      return 'Assertion Passed';
+      console.log('Assertion Passed');
     } else if (eqArrays(arrayOne,arrayTwo) === false) {
-      return 'Assertion Failed';
+      console.log('Assertion Failed');
     }
   }
 };
