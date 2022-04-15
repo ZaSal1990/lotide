@@ -1,6 +1,3 @@
-
-//prgm to comapre one array items to the counter parts 
-
 const eqArrays = function(arrayOne, arrayTwo) {
   let result;
   if (arrayOne.length === arrayTwo.length) {
@@ -14,7 +11,4 @@ const eqArrays = function(arrayOne, arrayTwo) {
     result = false;
   } return result;
 };
-
-
-
 module.exports = eqArrays;

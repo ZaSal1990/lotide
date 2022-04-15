@@ -1,4 +1,3 @@
-//prgm to assert/compare items in one array to their counter parts in teh otehr array
 const eqArrays = require('./eqArray');
 
 const assertArraysEqual = function(arrayOne, arrayTwo) {

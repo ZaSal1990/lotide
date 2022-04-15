@@ -1,5 +1,3 @@
-
-
 const findKey = function(object,callback) {
   let result;
   for (let item in object) {
@@ -10,7 +8,4 @@ const findKey = function(object,callback) {
   }
   
 };
-
-
-
 module.exports = findKey;

@@ -1,5 +1,3 @@
-//prgm to flatten arrays
-
 const flatten = function(sourceArray) {
   let targetArray = [];
   for (let item of sourceArray) {
@@ -13,10 +11,4 @@ const flatten = function(sourceArray) {
     }
   } return targetArray;
 };
-
-
-
-
-
-
 module.exports = flatten;
